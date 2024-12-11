@@ -11,17 +11,22 @@
     <title>Home</title>
     <link rel="website icon" type="png" href="./Logo_BinWin.png">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/styleLogin.css">
     <script src="./script/script.js" defer></script>
 </head>
 <body>
-    <footer>
-        <img onclick="changeSideTo('ranking')" class="icons" src="./icons/ranking.svg">
-        <img onclick="changeSideTo('statistic')" class="icons" src="./icons/statistic.svg">
-        <p onclick="changeSideTo('points')" class="icons">♻️</p>
-        <img onclick="changeSideTo('rewards')" class="icons" src="./icons/trophy.svg">
-        <img onclick="changeSideTo('profile')" class="icons" src="./icons/profile.svg">
-    </footer>
-
+    <header><h1>LogIn</h1></header>
+    <div id="login-form">
+        <form>
+            <label for="user">User</label>
+            <input id="user" type="text" placeholder="Schüler_itUser">
+            
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="itUser_pw">
+            
+            <button type="submit">Log in</button>
+        </form>
+    </div>
 </body>
 </html>
 

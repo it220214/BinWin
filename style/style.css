@@ -1,4 +1,29 @@
-/*Footer start*/
+/* Header Styles */
+#headerGeneral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    box-shadow: 0 0.3vh 0.8vh rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-top: 1vh;
+}
+
+#logo {
+    flex: 0;
+    text-align: center;
+    max-width: 30vw;
+    max-height: 30vh;
+    object-fit: contain;
+    font-size: 4vh;
+}
+
+/* Footer Styles */
 footer {
     position: fixed;
     bottom: 0;
@@ -8,17 +33,16 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 8vh;
+    box-shadow: 0 -0.3vh 0.8vh rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 .icons {
     flex: 1;
     text-align: center;
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 5vw;
+    max-height: 5vh;
     object-fit: contain;
-    font-size: 4vh;
+    font-size: 3.5vh;
 }
-/*Footer end*/
