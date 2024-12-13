@@ -15,18 +15,25 @@
     <script src="./script/script.js" defer></script>
 </head>
 <body>
-    <header><h1>LogIn</h1></header>
-    <div id="login-form">
+    <div id="login-container">
+        <div id="logo">
+            <img src="./Logo_BinWin.png" alt="Logo">
+        </div>
+        <h1>LogIn</h1>
         <form>
-            <label for="user">User</label>
-            <input id="user" type="text" placeholder="Schüler_itUser">
-            
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="itUser_pw">
-            
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="User" name="username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
             <button type="submit">Log in</button>
         </form>
-    </div>
+        <footer>
+            <p>Forgot your password? <a href="#">Click here</a></p>
+        </footer>
 </body>
 </html>
 
