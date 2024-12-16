@@ -3,6 +3,7 @@ content = document.getElementById('#content');
 
 //valid-Login
 function validLogIn(){
+    document.body.style = `background:white;`
     document.body.innerHTML = `
     <div id="headerGeneral">
         <img id="logo" src="./Logo_BinWin.png"> 

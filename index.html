@@ -15,26 +15,27 @@
     <script src="./script/script.js" defer></script>
 </head>
 <body>
-    <div id="login-container">
-        <div id="logo">
-            <img src="./Logo_BinWin.png" alt="Logo">
+    <div id="forLogin-body">
+        <div id="forLogin-container">
+            <div id="forLogin-logo">
+                <img src="./Logo_BinWin.png" alt="Logo">
+            </div>
+            <h1>LogIn</h1>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="User" name="username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <button type="submit">Log in</button>
+            </form>
+            <footer>
+                <p>Forgot your password? <a href="#">Click here</a></p>
+                <button type="button" id="register">Register</button>
+            </footer>
         </div>
-        <h1>LogIn</h1>
-        <form>
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="User" name="username" required>
-            </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" name="password" required>
-            </div>
-            <button type="submit">Log in</button>
-        </form>
-        <footer>
-            <p>Forgot your password? <a href="#">Click here</a></p>
-        </footer>
-    </div>
+    </div>    
 </body>
 </html>
 

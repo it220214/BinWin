@@ -1,7 +1,11 @@
 /* Allgemeine Einstellungen */
-body {
-    font-family: 'Arial', sans-serif;
+body{
     background: linear-gradient(to bottom, #8dbef3, #f0f8ff); /* Verlauf von Blau zu Weiß */
+    overflow: hidden;
+}
+
+#bodyForLogin {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -12,25 +16,39 @@ body {
 }
 
 /* Login-Container */
-#login-container {
+/* Allgemeine Einstellungen */
+#forLogin-body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #28a745;
+    background: linear-gradient(to bottom, #8dbef3, #f0f8ff);
+    overflow: hidden;
+}
+
+/* Login-Container */
+#forLogin-container {
     background: #ffffff;
     padding: 3rem;
     border-radius: 1.5rem;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
     max-width: 360px;
-    width: 90%;
+    width: 80%;
     text-align: center;
     position: relative;
 }
 
 /* Logo-Bereich */
-#logo {
+#forLogin-logo {
     position: absolute;
-    top: -4rem;
+    top: -6rem;
     left: 50%;
     transform: translateX(-50%);
     width: 10rem;
-    height: 7rem;
+    height: 10rem;
     background: #28a745;
     border-radius: 50%;
     display: flex;
@@ -39,20 +57,22 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-#logo img {
+#forLogin-logo img {
     width: 90%;
-    height: 80%;
+    height: 100%;
 }
 
-#login-container h1 {
+/* H1 bleibt */
+#forLogin-container h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    margin-top: 2rem; /* Abstand durch das Logo */
+    margin-top: 2rem;
     border-bottom: 0.3rem solid #8dbef3;
     display: inline-block;
     padding-bottom: 0.5rem;
     color: #28a745;
 }
+
 
 /* Form-Styling */
 form {
@@ -110,6 +130,17 @@ button {
 button:hover {
     background: #218838;
     transform: scale(1.05);
+}
+
+#register{
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s, transform 0.2s;
 }
 
 /* Footer */
