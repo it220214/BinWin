@@ -1,6 +1,7 @@
 //variablen 
-content = document.getElementById('#content');
+gotThePoint = true;
 
+validLogIn()
 //valid-Login
 function validLogIn(){
     document.body.style = `background:white;`
@@ -22,26 +23,45 @@ function validLogIn(){
 
 //Navigation
 function changeSideTo(side) {
-    content.innerhtml = "";
     switch (side) {
         case 'ranking':
-            rankSystem();
+            ranking();
             break;
         case 'statistic':
-            statisticSystem();
+            statistics();
             break;
         case 'points':
-            pointsystem();
+            points();
             break;
         case 'rewards':
-            rewardSystem();
+            rewards();
             break;
             case 'profile':
-            profileSystem();
+            profile();
             break;    
         default:
             break;
     }
+}
+
+function ranking() {
+}
+function statistics() {
+}
+function points() {
+    document.getElementById("content").innerHTML = `<div id="stylingBoxForPoints">
+    <p id="pointIcon">♻️</p><p id="numberOfPoints">x10</p>
+    <div id="getPointsButton" onclick="goToPhoto()">Get Points</div></div>`
+}
+function goToPhoto() {
+    if (gotThePoint) {
+        alert("Already got the Point for Today")
+    }else{}
+}
+
+function rewards() {
+}
+function profile() {
 }
 function rankSystem() {
 }
