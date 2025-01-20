@@ -1,7 +1,7 @@
 //variablen 
 gotThePoint = true;
 
-validLogIn()
+// validLogIn()
 //valid-Login
 function validLogIn(){
     document.body.style = `background:white;`
