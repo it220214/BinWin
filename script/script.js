@@ -1,3 +1,19 @@
+function register() {
+    document.getElementById("body").innerHTML = `
+    <div id="forLogin-container">
+        <h1>Benutzerliste</h1>
+        <ul id="userList"></ul>
+
+        <h2>Neuen Benutzer hinzufügen</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="password" id="password" placeholder="Passwort">
+        <input type="text" id="department" placeholder="Abteilung">
+        <input type="text" id="class" placeholder="Klasse">
+        <button id="addUserButton">Register</button>
+    </div>`;
+}
+
+
 //variablen 
 gotThePoint = true;
 
