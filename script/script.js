@@ -14,7 +14,7 @@ function register() {
 }
 
 function printUser() {
-    fetch(`../api/userapi.php`)
+    fetch(`./api/userapi.php`)
         .then((response) => response.json())
         .then((data) =>{
             console.log(data);
@@ -38,24 +38,31 @@ function addUser() {
     const classValue = document.getElementById("class").value;
 
     if (name && password && department && classValue) {
-        fetch('../api/userapi.php', {
+        fetch('./api/userapi.php', { 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, password, department, class: classValue }),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log("Server response:", data);
             if (data.code === 200) {
                 alert("User registered successfully!");
             } else {
                 alert(data.message);
             }
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => console.error("Fetch error:", error));
     } else {
         alert("Please fill in all fields!");
     }
 }
+
 
 
 
