@@ -1,8 +1,9 @@
 [
     {
-        "name": "",
-        "password": "",
-        "department": "",
-        "class": ""
+        "id": "id",
+        "name": "user",
+        "password": "pw",
+        "department": "dm",
+        "class": "class"
     }
 ]

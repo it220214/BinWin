@@ -9,9 +9,10 @@ function register() {
         <input type="password" id="password" placeholder="Passwort">
         <input type="text" id="department" placeholder="Abteilung">
         <input type="text" id="class" placeholder="Klasse">
-        <button id="addUserButton">Register</button>
+        <button id="addUserButton" onclick="addUser()">Register</button>
     </div>`;
 }
+
 
 
 //variablen 

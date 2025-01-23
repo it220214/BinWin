@@ -1,30 +1,26 @@
 <?php
-header("Content-Type: application/json");
-$method = $_SERVER['REQUEST_METHOD'];
-$file = '../data/user.json';
-
-if (!file_exists($file)) {
-    echo json_encode(["error" => "File not found"]);
-    exit;
-}
-
-// Lade existierende Daten
-$data = json_decode(file_get_contents($file), true);
-
-if ($method === 'GET') {
-    echo json_encode($data); // Sende alle Benutzer als JSON zurück
-} elseif ($method === 'POST') {
-    // Hole die POST-Daten
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
 
     if (isset($input['name'], $input['password'], $input['department'], $input['class'])) {
-        $data[] = $input; // Füge den neuen Benutzer hinzu
+        $newUser = [
+            "id" => uniqid(),
+            "name" => $input['name'],
+            "password" => $input['password'],
+            "department" => $input['department'],
+            "class" => $input['class']
+        ];
+
+        $file = 'user.json';
+        $data = json_decode(file_get_contents($file), true);
+        $data[] = $newUser;
         file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
-        echo json_encode(["success" => "User added"]);
+
+        echo json_encode(["code" => 200, "message" => "User added successfully"]);
     } else {
-        echo json_encode(["error" => "Invalid input"]);
+        echo json_encode(["code" => 400, "message" => "Invalid input"]);
     }
 } else {
-    echo json_encode(["error" => "Invalid request method"]);
+    echo json_encode(["code" => 405, "message" => "Method not allowed"]);
 }
 ?>
