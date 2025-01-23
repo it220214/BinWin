@@ -12,8 +12,19 @@
     <link rel="website icon" type="png" href="./Logo_BinWin.png">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/styleLogin.css">
-    <script src="./script/user.js" defer></script>
-    <script src="./script/script.js" defer></script>
+    <script>
+        let timestamp = new Date().getTime();
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        let script = document.createElement('script');
+        script.defer = true;
+
+        // relative path to your files
+        script.src = './script/script.js'   + `?${timestamp}`;
+
+    
+        document.head.appendChild(script);
+    </script>
 </head>
 <body id="body">
     <div id="forLogin-body">
