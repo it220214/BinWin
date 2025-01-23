@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "class" => $input['class']
         ];
 
-        $file = 'user.json';
+        $file = '../data/user.json';
         $data = json_decode(file_get_contents($file), true);
         $data[] = $newUser;
         file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
