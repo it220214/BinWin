@@ -35,12 +35,12 @@
             <h1>LogIn</h1>
             <form>
                 <div class="input-group">
-                    <input type="text" placeholder="User" name="username" required>
+                    <input id="usernameForLogin" type="text" placeholder="User" name="username" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" placeholder="Password" name="password" required>
+                    <input id="pwForLogin" type="password" placeholder="Password" name="password" required>
                 </div>
-                <button type="submit">Log in</button>
+                <button type="button" onclick="LogIn()">Log in</button>
             </form>
             <footer>
                 <p>Forgot your password? <a href="#">Click here</a></p>

@@ -13,22 +13,37 @@ function register() {
     </div>`;
 }
 
-function printUser() {
-    fetch(`./api/userapi.php`)
+function LogIn() {
+    const username = document.getElementById("usernameForLogin").value;
+    const pw = document.getElementById("pwForLogin").value;
+
+    fetch(`./api/userapi.php`) // Korrigieren Sie den Pfad entsprechend Ihrer Umgebung
         .then((response) => response.json())
-        .then((data) =>{
+        .then((data) => {
             console.log(data);
-            if(data.code == 200) {
-                //html
-            } else {
-                //error message
+            if (data.code == 200) {
+                let valid = false;
+                // Überprüfen, ob der Benutzer in der Liste ist
+                for (let index = 0; index < data.answer.length; index++) {
+                    if (data.answer[index].name == username && data.answer[index].password == pw) {
+                    valid = true;
+                    validLogIn();
+                } 
+                }
+            if (!valid) {
+                alert("Benutzername oder Passwort ist falsch!");
             }
-           
+                
+            } else {
+                alert("Benutzerliste konnte nicht geladen werden!");
+            }
         })
-        .catch((error)=>{
-            console.log(error);
-        })
+        .catch((error) => {
+            console.error("Fehler:", error);
+            alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
+        });
 }
+
 
 
 function addUser() {
@@ -64,13 +79,9 @@ function addUser() {
 }
 
 
-
-
 //variablen 
 gotThePoint = true;
 
-// validLogIn()
-//valid-Login
 function validLogIn(){
     document.body.style = `background:white;`
     document.body.innerHTML = `
