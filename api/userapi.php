@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         echo json_encode([
             "code" => 404,
-            "answer" => "Benutzerdatei nicht gefunden" // Direkte Nachricht
+            "answer" => "File not found" // Direkte Nachricht
         ]);
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -37,19 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         echo json_encode([
             "code" => 200,
-            "answer" => "Benutzer erfolgreich hinzugefügt" // Direkte Nachricht
+            "answer" => "User added sucessful" // Direkte Nachricht
         ]);
     } else {
         echo json_encode([
             "code" => 400,
-            "answer" => "Ungültige Eingabe" // Direkte Nachricht
+            "answer" => "Input invalid" // Direkte Nachricht
         ]);
     }
 } else {
     http_response_code(405);
     echo json_encode([
         "code" => 405,
-        "answer" => "Methode nicht erlaubt" // Direkte Nachricht
+        "answer" => "Method not allowed" // Direkte Nachricht
     ]);
 }
 ?>

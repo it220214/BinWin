@@ -17,7 +17,7 @@ function LogIn() {
     const username = document.getElementById("usernameForLogin").value;
     const pw = document.getElementById("pwForLogin").value;
 
-    fetch(`./api/userapi.php`) // Korrigieren Sie den Pfad entsprechend Ihrer Umgebung
+    fetch(`./api/userapi.php`) 
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -31,16 +31,16 @@ function LogIn() {
                 } 
                 }
             if (!valid) {
-                alert("Benutzername oder Passwort ist falsch!");
+                alert("Username or password is wrong!");
             }
                 
             } else {
-                alert("Benutzerliste konnte nicht geladen werden!");
+                alert("Userlist not loaded!");
             }
         })
         .catch((error) => {
-            console.error("Fehler:", error);
-            alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
+            console.error("Error:", error);
+            alert("An error occurred please try again later!");
         });
 }
 
