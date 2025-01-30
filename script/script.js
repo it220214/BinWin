@@ -23,7 +23,7 @@ function LogIn() {
     const username = document.getElementById("usernameForLogin").value;
     const pw = document.getElementById("pwForLogin").value;
 
-    fetch(`./api/userapi.php`) 
+    fetch(`./api/userapi.php`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -32,14 +32,14 @@ function LogIn() {
                 // Überprüfen, ob der Benutzer in der Liste ist
                 for (let index = 0; index < data.answer.length; index++) {
                     if (data.answer[index].name == username && data.answer[index].password == pw) {
-                    valid = true;
-                    validLogIn();
-                } 
+                        valid = true;
+                        validLogIn();
+                    }
                 }
-            if (!valid) {
-                alert("Username or password is wrong!");
-            }
-                
+                if (!valid) {
+                    alert("Username or password is wrong!");
+                }
+
             } else {
                 alert("Userlist not loaded!");
             }
@@ -59,26 +59,26 @@ function addUser() {
     const classValue = document.getElementById("class").value;
 
     if (name && password && department && classValue) {
-        fetch('./api/userapi.php', { 
+        fetch('./api/userapi.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, password, department, class: classValue }),
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Server response:", data);
-            if (data.code === 200) {
-                alert("User registered successfully!");
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch(error => console.error("Fetch error:", error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Server response:", data);
+                if (data.code === 200) {
+                    alert("User registered successfully!");
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error("Fetch error:", error));
     } else {
         alert("Please fill in all fields!");
     }
@@ -88,7 +88,7 @@ function addUser() {
 //variablen 
 gotThePoint = true;
 
-function validLogIn(){
+function validLogIn() {
     document.body.style = `background:white;`
     document.body.innerHTML = `
     <div id="headerGeneral">
@@ -121,9 +121,9 @@ function changeSideTo(side) {
         case 'rewards':
             rewards();
             break;
-            case 'profile':
+        case 'profile':
             profile();
-            break;    
+            break;
         default:
             break;
     }
@@ -143,10 +143,25 @@ function points() {
 function rewards() {
 }
 function profile() {
-    
+
 }
 
 function rankSystem() {
+    document.getElementById("content").innerHTML =
+    `<div id="rankSystem">
+        <div id="rank1">
+            <div id="class"></div>
+            <div id="box"></div>
+        </div>
+        <div id="rank2">
+            <div id="class"></div>
+            <div id="box"></div>
+        </div>
+        <div id="rank3">
+            <div id="class"></div>
+            <div id="box">
+        </div>
+    </div>`;
 }
 function statisticSystem() {
 }
