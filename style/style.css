@@ -83,7 +83,7 @@ footer {
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
 }
 
-
+/*Profil*/
 #profilBox{
     display: grid;
     grid-template-columns: 1fr 1fr;
