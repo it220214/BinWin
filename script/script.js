@@ -1,3 +1,10 @@
+let counter = 0;
+const username = document.getElementById("usernameForLogin").value;
+const pw = document.getElementById("pwForLogin").value;
+
+LogIn(username, pw);
+
+
 function register() {
     document.getElementById("body").innerHTML = `
     <div id="form-container">
@@ -21,30 +28,39 @@ function register() {
     </div>`;
 }
 
-function LogIn() {
-    const username = document.getElementById("usernameForLogin").value;
-    const pw = document.getElementById("pwForLogin").value;
+function LogIn(uname, pass) {
 
-    fetch(`./api/userapi.php`) 
+    let formData = new FormData();
+    formData.append('user', uname);
+    formData.append('password', pass);
+
+    let fetch_url = './api/userapi.php';
+    let fetch_config = {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "aplication/json"
+        }
+    }
+
+    fetch(fetch_url, fetch_config) 
         .then((response) => response.json())
         .then((data) => {
+
             console.log(data);
+
             if (data.code == 200) {
-                let valid = false;
-                // Überprüfen, ob der Benutzer in der Liste ist
-                for (let index = 0; index < data.answer.length; index++) {
-                    if (data.answer[index].name == username && data.answer[index].password == pw) {
-                    valid = true;
                     validLogIn();
                 } 
-                }
-            if (!valid) {
-                alert("Username or password is wrong!");
-            }
                 
-            } else {
-                alert("Userlist not loaded!");
+            else {
+                if (counter > 0) {
+                    alert(data.msg);
+                }
+                counter++
+                
             }
+
         })
         .catch((error) => {
             console.error("Error:", error);
@@ -76,11 +92,15 @@ function addUser() {
             console.log("Server response:", data);
             if (data.code === 200) {
                 alert("User registered successfully!");
+                LogIn(name, password)
             } else {
                 alert(data.message);
             }
         })
         .catch(error => console.error("Fetch error:", error));
+
+        
+        
     } else {
         alert("Please fill in all fields!");
     }
@@ -145,7 +165,12 @@ function points() {
 function rewards() {
 }
 function profile() {
-    
+    document.getElementById("content").innerHTML = `
+    <div>
+        <div>
+        <img src="./icons/profile.svg">
+        </div>
+    </div>`;
 }
 
 function rankSystem() {
