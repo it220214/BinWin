@@ -84,7 +84,7 @@ function addUser() {
     const classValue = document.getElementById("class").value;
 
     if (name && password && department && classValue) {
-        fetch('./api/userapi.php', { 
+        fetch('./api/userapi.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, password, department, class: classValue }),
@@ -117,7 +117,7 @@ function addUser() {
 //variablen 
 gotThePoint = true;
 
-function validLogIn(){
+function validLogIn() {
     document.body.style = `background:white;`
     document.body.innerHTML = `
     <div id="headerGeneral">
@@ -150,9 +150,9 @@ function changeSideTo(side) {
         case 'rewards':
             rewards();
             break;
-            case 'profile':
+        case 'profile':
             profile();
-            break;    
+            break;
         default:
             break;
     }
@@ -174,13 +174,28 @@ function rewards() {
 function profile() {
     document.getElementById("content").innerHTML = `
     <div>
-        <div>
+        <div id="profilIcon">
         <img src="./icons/profile.svg">
         </div>
     </div>`;
 }
 
 function rankSystem() {
+    document.getElementById("content").innerHTML =
+    `<div id="rankSystem">
+        <div id="rank2">
+            <div class="class">1BHITM</div> <!--klasse auslesen-->
+            <div class="box"></div>
+        </div>
+        <div id="rank1">
+            <div class="class">2BHITM</div>
+            <div class="box"></div>
+        </div>
+        <div id="rank3">
+            <div class="class">3BHITM</div>
+            <div class="box">
+        </div>
+    </div>`;
 }
 function statisticSystem() {
 }
