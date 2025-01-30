@@ -17,8 +17,10 @@
         let script = document.createElement('script');
         script.defer = true;
         // relative path to your files
-        script.src = './script/script.js'   + `?${timestamp}`;    
+        script.src = './script/script.js'   + `?${timestamp}`;   
+        script2.src = './script/points.js'   + `?${timestamp}`; 
         document.head.appendChild(script);
+        document.head.appendChild(script2);
     </script>
 </head>
 <body id="body">
