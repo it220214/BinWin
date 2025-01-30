@@ -165,7 +165,12 @@ function points() {
 function rewards() {
 }
 function profile() {
-    
+    document.getElementById("content").innerHTML = `
+    <div>
+        <div>
+        <img src="./icons/profile.svg">
+        </div>
+    </div>`;
 }
 
 function rankSystem() {
