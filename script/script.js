@@ -1,15 +1,18 @@
 let counter = 0;
-const username = document.getElementById("usernameForLogin").value;
-const pw = document.getElementById("pwForLogin").value;
 
-LogIn(username, pw);
+preLog()
+
+function preLog() {
+    const username = document.getElementById("usernameForLogin").value;
+    const pw = document.getElementById("pwForLogin").value;
+    LogIn(username, pw);
+}
 
 
 function register() {
     document.getElementById("body").innerHTML = `
     <div id="form-container">
         <h1>Benutzerliste</h1>
-        <ul id="userList"></ul>
 
         <h2>Neuen Benutzer hinzufügen</h2>
         <input type="text" id="name" placeholder="Name">
