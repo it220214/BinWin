@@ -13,5 +13,13 @@
         "password": "kms",
         "department": "m",
         "class": "m"
+    },
+    {
+        "id": "679b3ce0e0dd5",
+        "name": "nino",
+        "password": "test",
+        "department": "medt",
+        "class": "3bhitm",
+        "score": 0
     }
 ]

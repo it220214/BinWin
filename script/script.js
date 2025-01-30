@@ -1,3 +1,8 @@
+let counter = 0;
+
+LogIn();
+
+
 function register() {
     document.getElementById("body").innerHTML = `
     <div id="forLogin-container">
@@ -18,26 +23,38 @@ function LogIn() {
     const username = document.getElementById("usernameForLogin").value;
     const pw = document.getElementById("pwForLogin").value;
 
-    fetch(`./api/userapi.php`) 
+
+    let formData = new FormData();
+    formData.append('user', username);
+    formData.append('password', pw);
+
+    let fetch_url = './api/userapi.php';
+    let fetch_config = {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "aplication/json"
+        }
+    }
+
+    fetch(fetch_url, fetch_config) 
         .then((response) => response.json())
         .then((data) => {
+
             console.log(data);
+
             if (data.code == 200) {
-                let valid = false;
-                // Überprüfen, ob der Benutzer in der Liste ist
-                for (let index = 0; index < data.answer.length; index++) {
-                    if (data.answer[index].name == username && data.answer[index].password == pw) {
-                    valid = true;
                     validLogIn();
                 } 
-                }
-            if (!valid) {
-                alert("Username or password is wrong!");
-            }
                 
-            } else {
-                alert("Userlist not loaded!");
+            else {
+                if (counter > 0) {
+                    alert(data.msg);
+                }
+                counter++
+                
             }
+
         })
         .catch((error) => {
             console.error("Error:", error);

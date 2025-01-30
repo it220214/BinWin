@@ -1,31 +1,58 @@
 <?php
-header('Content-Type: application/json');
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Benutzerliste abrufen
+if (!isset($_SESSION['loggedin'])) {
+    $_SESSION['loggedin'] = false;
+}
+
+header('Content-Type: application/json');
+
+
+$answer = array(
+    "code" => 404,
+    "logged" => false,
+    "msg" => ""
+);
+
+
+if ($_SESSION['loggedin']) {
+    $answer["code"] = 200;
+    $answer["logged"] = true;
+} 
+else if (isset($_POST['user']) && isset($_POST['password'])) {
+    $user = $_POST['user'];
+    $pw = $_POST['password'];
     $file = '../data/user.json';
+
+
+
     if (file_exists($file)) {
         $users = json_decode(file_get_contents($file), true);
-        echo json_encode([
-            "code" => 200,
-            "answer" => $users // Benutzerliste direkt in der Antwort
-        ]);
-        $_SESSION["loggedIn"] = true;
+
+        for ($i = 0; $i < count($users); $i++) {
+            if ($users[$i]['name'] == $user && $users[$i]['password'] == $pw) {
+                $answer["code"] = 200;
+                $answer["msg"] = $users;
+                $answer["logged"] = true;
+                $_SESSION['loggedin'] = true;
+            } else {
+                $answer['msg'] = "Username or password is wrong!";
+            }
+        }
     } else {
-        echo json_encode([
-            "code" => 404,
-            "answer" => "File not found" // Direkte Nachricht
-        ]);
+        $answer['msg'] = "No users found!";
     }
-} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+}
+
+
+elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Neuen Benutzer hinzufügen
     $input = json_decode(file_get_contents('php://input'), true);
 
     if (isset($input['name'], $input['password'], $input['department'], $input['class'])) {
         $file = '../data/user.json';
         $users = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-        
+
         $newUser = [
             "id" => uniqid(),
             "name" => $input['name'],
@@ -55,3 +82,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         "answer" => "Method not allowed" // Direkte Nachricht
     ]);
 }
+
+echo json_encode($answer);
