@@ -133,11 +133,7 @@ function points() {
     <p id="pointIcon">♻️</p><p id="numberOfPoints">x10</p>
     <div id="getPointsButton" onclick="goToPhoto()">Get Points</div></div>`
 }
-function goToPhoto() {
-    if (gotThePoint) {
-        alert("Already got the Point for Today")
-    }else{}
-}
+
 
 function rewards() {
 }
