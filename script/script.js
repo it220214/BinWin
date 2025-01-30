@@ -148,8 +148,7 @@ function rankSystem() {
 }
 function statisticSystem() {
 }
-function pointsystem() {
-}
+
 function rewardSystem() {
 }
 function profileSystem() {
