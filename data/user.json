@@ -53,5 +53,13 @@
         "department": "Medientechnik",
         "class": "123",
         "score": 0
+    },
+    {
+        "id": "679b60e48e789",
+        "name": "michi",
+        "password": "admin",
+        "department": "Medientechnik",
+        "class": "3bhitm",
+        "score": 0
     }
 ]
