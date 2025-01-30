@@ -82,6 +82,15 @@ footer {
     margin-top: 10vh;
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
 }
+
+
+#profilBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 40vw;
+    left: 10vh;
+}
 #pointIcon{
     font-size: 15vh;
     transform: scale(1.5);

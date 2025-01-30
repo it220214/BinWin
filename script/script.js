@@ -173,10 +173,15 @@ function rewards() {
 }
 function profile() {
     document.getElementById("content").innerHTML = `
-    <div>
+    <div id="profilBox">
         <div id="profilIcon">
         <img src="./icons/profile.svg">
         </div>
+        <div id="profilText">
+            <h2>Name</h2>
+            <h2>Class</h2>
+        </div>
+        
     </div>`;
 }
 
