@@ -5,17 +5,24 @@ LogIn();
 
 function register() {
     document.getElementById("body").innerHTML = `
-    <div id="forLogin-container">
+    <div id="form-container">
         <h1>Benutzerliste</h1>
         <ul id="userList"></ul>
 
         <h2>Neuen Benutzer hinzufügen</h2>
         <input type="text" id="name" placeholder="Name">
         <input type="password" id="password" placeholder="Passwort">
-        <input type="text" id="department" placeholder="Abteilung">
+        
+        <select id="department">
+            <option>Medientechnik</option>
+            <option>Informatik</option>
+            <option>Elektronik</option>
+            <option>Medizintechnik</option>
+        </select>
+
         <input type="text" id="class" placeholder="Klasse">
-        <br>
-        <button id="addUserButton" onclick="addUser()">Register</button>
+        
+        <button id="addUserButton" onclick="addUser()">Registrieren</button>
     </div>`;
 }
 
@@ -150,16 +157,14 @@ function points() {
     <p id="pointIcon">♻️</p><p id="numberOfPoints">x10</p>
     <div id="getPointsButton" onclick="goToPhoto()">Get Points</div></div>`
 }
-function goToPhoto() {
-    if (gotThePoint) {
-        alert("Already got the Point for Today")
-    }else{}
-}
+
 
 function rewards() {
 }
 function profile() {
+    
 }
+
 function rankSystem() {
 }
 function statisticSystem() {
