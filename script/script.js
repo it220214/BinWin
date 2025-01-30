@@ -25,6 +25,10 @@ function register() {
         <input type="text" id="class" placeholder="Klasse">
         
         <button id="addUserButton" onclick="addUser()">Registrieren</button>
+
+        <footer>
+            <p>Already have an account? <a href="./index.html">Click here</a></p>
+        </footer>
     </div>`;
 }
 

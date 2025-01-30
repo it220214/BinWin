@@ -17,7 +17,7 @@ body {
     width: 300px;
 }
 
-input, select, button {
+input, select, #addUserButton {
     width: 90%;
     padding: 10px;
     margin: 8px 0;
@@ -31,18 +31,18 @@ select {
     width: 95%;
 }
 
-button {
-    background-color: #007bff;
+#addUserButton {
+    background-color: #28a745;
     color: white;
     border: none;
     cursor: pointer;
     font-weight: bold;
 }
 
-button:hover {
-    background-color: #0056b3;
+#addUserButton:hover {
+    background-color: #28a745;
 }
 
-button:active {
-    background-color: #003d80;
+#addUserButton:active {
+    background-color: #28a745;
 }
