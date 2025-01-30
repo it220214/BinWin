@@ -4,13 +4,15 @@
         "name": "user",
         "password": "pw",
         "department": "dm",
-        "class": "class"
+        "class": "class",
+        "score": 0
     },
     {
         "id": "679205a2239fd",
         "name": "test",
         "password": "kms",
         "department": "m",
-        "class": "m"
+        "class": "m",
+        "score": 0
     }
 ]
