@@ -9,6 +9,7 @@ function register() {
         <input type="password" id="password" placeholder="Passwort">
         <input type="text" id="department" placeholder="Abteilung">
         <input type="text" id="class" placeholder="Klasse">
+        <br>
         <button id="addUserButton" onclick="addUser()">Register</button>
     </div>`;
 }
@@ -146,8 +147,7 @@ function rankSystem() {
 }
 function statisticSystem() {
 }
-function pointsystem() {
-}
+
 function rewardSystem() {
 }
 function profileSystem() {
