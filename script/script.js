@@ -1,15 +1,18 @@
 let counter = 0;
-const username = document.getElementById("usernameForLogin").value;
-const pw = document.getElementById("pwForLogin").value;
 
-LogIn(username, pw);
+preLog()
+
+function preLog() {
+    const username = document.getElementById("usernameForLogin").value;
+    const pw = document.getElementById("pwForLogin").value;
+    LogIn(username, pw);
+}
 
 
 function register() {
     document.getElementById("body").innerHTML = `
     <div id="form-container">
         <h1>Benutzerliste</h1>
-        <ul id="userList"></ul>
 
         <h2>Neuen Benutzer hinzufügen</h2>
         <input type="text" id="name" placeholder="Name">
@@ -25,6 +28,10 @@ function register() {
         <input type="text" id="class" placeholder="Klasse">
         
         <button id="addUserButton" onclick="addUser()">Registrieren</button>
+
+        <footer>
+            <p>Already have an account? <a href="./index.html">Click here</a></p>
+        </footer>
     </div>`;
 }
 
@@ -167,7 +174,7 @@ function rewards() {
 function profile() {
     document.getElementById("content").innerHTML = `
     <div>
-        <div>
+        <div id="profilIcon">
         <img src="./icons/profile.svg">
         </div>
     </div>`;
