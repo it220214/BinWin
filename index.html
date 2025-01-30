@@ -14,15 +14,10 @@
     <link rel="stylesheet" href="style/styleLogin.css">
     <script>
         let timestamp = new Date().getTime();
-        let link = document.createElement('link');
-        link.rel = 'stylesheet';
         let script = document.createElement('script');
         script.defer = true;
-
         // relative path to your files
-        script.src = './script/script.js'   + `?${timestamp}`;
-
-    
+        script.src = './script/script.js'   + `?${timestamp}`;    
         document.head.appendChild(script);
     </script>
 </head>
