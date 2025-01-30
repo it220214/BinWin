@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $input = json_decode(file_get_contents('php://input'), true);
 
     if (isset($input['name'], $input['password'], $input['department'], $input['class'])) {
-        $file = './user.json';
+        $file = '../data/user.json';
         $users = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
         
         $newUser = [
