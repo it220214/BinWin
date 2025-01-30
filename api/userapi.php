@@ -18,6 +18,7 @@ $answer = array(
 if ($_SESSION['loggedin']) {
     $answer["code"] = 200;
     $answer["logged"] = true;
+    echo json_encode($answer);
 } 
 else if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
@@ -37,10 +38,13 @@ else if (isset($_POST['user']) && isset($_POST['password'])) {
                 $_SESSION['loggedin'] = true;
             } else {
                 $answer['msg'] = "Username or password is wrong!";
+                
             }
         }
+        echo json_encode($answer);
     } else {
         $answer['msg'] = "No users found!";
+        echo json_encode($answer);
     }
 }
 
@@ -83,4 +87,4 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 }
 
-echo json_encode($answer);
+

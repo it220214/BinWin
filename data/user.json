@@ -21,5 +21,37 @@
         "department": "medt",
         "class": "3bhitm",
         "score": 0
+    },
+    {
+        "id": "679b55d1de242",
+        "name": "nino",
+        "password": "123",
+        "department": "Medientechnik",
+        "class": "3bhitm",
+        "score": 0
+    },
+    {
+        "id": "679b5699a1ecc",
+        "name": "testing",
+        "password": "135",
+        "department": "Medientechnik",
+        "class": "3bhitm",
+        "score": 0
+    },
+    {
+        "id": "679b578cab958",
+        "name": "Test1",
+        "password": "kkk",
+        "department": "Medientechnik",
+        "class": "3bhitm",
+        "score": 0
+    },
+    {
+        "id": "679b58208ce8a",
+        "name": "123",
+        "password": "123",
+        "department": "Medientechnik",
+        "class": "123",
+        "score": 0
     }
 ]

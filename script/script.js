@@ -1,6 +1,8 @@
 let counter = 0;
+const username = document.getElementById("usernameForLogin").value;
+const pw = document.getElementById("pwForLogin").value;
 
-LogIn();
+LogIn(username, pw);
 
 
 function register() {
@@ -26,14 +28,11 @@ function register() {
     </div>`;
 }
 
-function LogIn() {
-    const username = document.getElementById("usernameForLogin").value;
-    const pw = document.getElementById("pwForLogin").value;
-
+function LogIn(uname, pass) {
 
     let formData = new FormData();
-    formData.append('user', username);
-    formData.append('password', pw);
+    formData.append('user', uname);
+    formData.append('password', pass);
 
     let fetch_url = './api/userapi.php';
     let fetch_config = {
@@ -93,11 +92,15 @@ function addUser() {
             console.log("Server response:", data);
             if (data.code === 200) {
                 alert("User registered successfully!");
+                LogIn(name, password)
             } else {
                 alert(data.message);
             }
         })
         .catch(error => console.error("Fetch error:", error));
+
+        
+        
     } else {
         alert("Please fill in all fields!");
     }
