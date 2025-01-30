@@ -12,5 +12,12 @@
         "password": "kms",
         "department": "m",
         "class": "m"
+    },
+    {
+        "id": "679b2a03be4b3",
+        "name": "admin",
+        "password": "admin",
+        "department": "Medientechnik",
+        "class": "3BHITM"
     }
 ]
