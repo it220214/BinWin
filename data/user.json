@@ -12,7 +12,6 @@
         "name": "test",
         "password": "kms",
         "department": "m",
-        "class": "m",
-        "score": 0
+        "class": "m"
     }
 ]
