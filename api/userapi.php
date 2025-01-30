@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json');
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Benutzerliste abrufen
@@ -10,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             "code" => 200,
             "answer" => $users // Benutzerliste direkt in der Antwort
         ]);
+        $_SESSION["loggedIn"] = true;
     } else {
         echo json_encode([
             "code" => 404,
@@ -29,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             "name" => $input['name'],
             "password" => $input['password'],
             "department" => $input['department'],
-            "class" => $input['class']
+            "class" => $input['class'],
+            "score" => 0
         ];
 
         $users[] = $newUser;
@@ -52,4 +55,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         "answer" => "Method not allowed" // Direkte Nachricht
     ]);
 }
-?>
