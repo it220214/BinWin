@@ -7,6 +7,7 @@ function register() {
         <h2>Neuen Benutzer hinzufügen</h2>
         <input type="text" id="name" placeholder="Name">
         <input type="password" id="password" placeholder="Passwort">
+        <select name="department" id="department></select>
         <input type="text" id="department" placeholder="Abteilung">
         <input type="text" id="class" placeholder="Klasse">
         <br>
