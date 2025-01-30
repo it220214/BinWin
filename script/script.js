@@ -176,17 +176,17 @@ function profile() {
 function rankSystem() {
     document.getElementById("content").innerHTML =
     `<div id="rankSystem">
-        <div id="rank1">
-            <div id="class"></div>
-            <div id="box"></div>
-        </div>
         <div id="rank2">
-            <div id="class"></div>
-            <div id="box"></div>
+            <div class="class">1BHITM</div> <!--klasse auslesen-->
+            <div class="box"></div>
+        </div>
+        <div id="rank1">
+            <div class="class">2BHITM</div>
+            <div class="box"></div>
         </div>
         <div id="rank3">
-            <div id="class"></div>
-            <div id="box">
+            <div class="class">3BHITM</div>
+            <div class="box">
         </div>
     </div>`;
 }
