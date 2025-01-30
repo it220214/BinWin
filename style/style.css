@@ -86,3 +86,10 @@ footer {
     font-size: 15vh;
     transform: scale(1.5);
 }
+
+#profilIcon{
+    text-align: center;
+}
+#profilIcon img{
+    width: 20vw;
+}

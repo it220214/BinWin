@@ -174,7 +174,7 @@ function rewards() {
 function profile() {
     document.getElementById("content").innerHTML = `
     <div>
-        <div>
+        <div id="profilIcon">
         <img src="./icons/profile.svg">
         </div>
     </div>`;
