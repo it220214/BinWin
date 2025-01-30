@@ -143,7 +143,9 @@ function goToPhoto() {
 function rewards() {
 }
 function profile() {
+    
 }
+
 function rankSystem() {
 }
 function statisticSystem() {
