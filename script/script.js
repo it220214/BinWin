@@ -181,6 +181,7 @@ function profile() {
             <h2>Name</h2>
             <h2>Class</h2>
         </div>
+    <div></div>
         
     </div>`;
 }
